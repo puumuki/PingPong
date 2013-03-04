@@ -21,7 +21,7 @@ def Polar2(magnitude, degrees):
     return Vector2(x, y)
 
 ################################################################################
-    
+
 class Vector2:
 
     __slots__ = 'x', 'y'
@@ -271,7 +271,7 @@ class Vector2:
             self.y %= obj
         return self
 
-    def __ipow__(self, obj):        
+    def __ipow__(self, obj):
         if isinstance(obj, Vector2):
             self.x **= obj.x
             self.y **= obj.y
@@ -340,7 +340,7 @@ class Vector2:
         return Vector2(abs(self.x), abs(self.y))
 
     # Virtual "magnitude" Attribute
-    
+
     def __fg_ma(self):
         return hypot(self.x, self.y)
 
@@ -352,7 +352,7 @@ class Vector2:
     magnitude = property(__fg_ma, __fs_ma, doc='Virtual "magnitude" Attribute')
 
     # Virtual "direction" Attribute
-    
+
     def __fg_di(self):
         return atan2(self.y, self.x)
 
@@ -363,7 +363,7 @@ class Vector2:
     direction = property(__fg_di, __fs_di, doc='Virtual "direction" Attribute')
 
     # Virtual "degrees" Attribute
-    
+
     def __fg_de(self):
         return degrees(atan2(self.x, self.y)) % 360
 
